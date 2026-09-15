@@ -1,0 +1,21 @@
+.navbaroutside{
+    width: 80%;
+    min-height: 60px;
+    background: rgba(238, 246, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(191, 219, 254, 0.65);
+    padding: 9px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e40af;
+    letter-spacing: 0.02em;
+    position: relative;
+    z-index: 60;
+}
+
+.navbaroutside p {
+    margin: 0;
+    padding: 20px;
+}
