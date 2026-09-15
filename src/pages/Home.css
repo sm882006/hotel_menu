@@ -1,3 +1,213 @@
-.nav{
-    min-height: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root{
+  --ink: #1C120B;
+  --cream: #FBF1DE;
+  --saffron: #E8A23D;
+  --chili: #B4432D;
+  --clove: #6B4A3A;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+body{
+  margin: 0;
+  background: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* ---------- Floating navbar ---------- */
+.navbaroutside{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 86%;
+    max-width: 1180px;
+    min-height: 64px;
+    margin: 0 auto;
+    padding: 0 28px;
+    background: rgba(28, 18, 11, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(251, 241, 222, 0.14);
+    border-radius: 999px;
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    font-family: var(--font-body);
+}
+
+.navoutside_left .restoname .homeoutside{
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navoutside_left .restoname .homeoutside:hover{
+    color: var(--saffron);
+}
+
+.navoutside_right{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navoutside_right a{
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: rgba(251, 241, 222, 0.82);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navoutside_right a:hover,
+.navoutside_right a:focus-visible{
+    color: var(--saffron);
+}
+
+.navoutside_right .menu button{
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--saffron);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.navoutside_right .menu button:hover{
+    background: var(--chili);
+    color: var(--cream);
+    transform: translateY(-1px);
+}
+
+.navoutside_right .menu button:focus-visible,
+.navoutside_right a:focus-visible{
+    outline: 2px solid var(--saffron);
+    outline-offset: 3px;
+}
+
+/* ---------- Hero ---------- */
+.home_section{
+    background: var(--ink);
+}
+
+.hero{
+    position: relative;
+    height: 100vh;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-video{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.05) brightness(0.75);
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        180deg,
+        rgba(28, 18, 11, 0.15) 0%,
+        rgba(28, 18, 11, 0.3) 45%,
+        rgba(28, 18, 11, 0.92) 100%
+    );
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    padding: 0 clamp(24px, 6vw, 96px) clamp(56px, 10vh, 120px);
+    color: var(--cream);
+}
+
+.hero-content h1{
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 0 0 18px;
+}
+
+.hero-content p{
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: rgba(251, 241, 222, 0.82);
+    max-width: 46ch;
+    margin: 0;
+}
+
+/* ---------- Sections below the fold (placeholders for now) ---------- */
+.popular_item_section{
+    background: var(--cream);
+    min-height: 40vh;
+    padding: 80px clamp(24px, 6vw, 96px);
+}
+
+.home_section ~ .history,
+.home_section ~ .contact{
+    background: var(--cream);
+    border-top: 1px solid rgba(28, 18, 11, 0.08);
+    padding: 80px clamp(24px, 6vw, 96px);
+    min-height: 30vh;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px){
+    .navbaroutside{
+        width: 92%;
+        top: 12px;
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .navoutside_right{
+        gap: 14px;
+    }
+
+    .navoutside_right .homeoutside,
+    .navoutside_right .popular_item,
+    .navoutside_right .history{
+        display: none;
+    }
+
+    .hero-content{
+        padding-bottom: 64px;
+    }
+
+    .hero-content h1{
+        font-size: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .navoutside_right a,
+    .navoutside_right .menu button,
+    .navoutside_left .restoname .homeoutside{
+        transition: none;
+    }
 }
