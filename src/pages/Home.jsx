@@ -63,7 +63,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home_section">
+      <div id="home_section" className="home_section">
 
         <section className="hero">
           <video
@@ -86,14 +86,14 @@ const Home = () => {
 
       </div>
 
-      <div className="popular_item_section">
+      <div id="popular_item_section" className="popular_item_section">
         <p className="heading1">OUR SPECIALS</p>
         <p className="heading2">Popular at our restorent.</p>
         <div className="popular-cards">
           {popularitem.map((item) => (
             <div className="popular-card" key={item.id}>
               <div className="popular-image">
-                <img src={item.image} alt={item.name} srcset="" />
+                <img src={item.image} alt={item.name} />
               </div>
 
               <div className="popular-content">
@@ -106,7 +106,7 @@ const Home = () => {
 
       </div>
 
-      <div className="history">
+      <div id="history_section" className="history">
         <div className="history-container">
           {/* Left Side - Image */}
           <div className="history-image">
@@ -194,7 +194,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="contact">
+      <div id="contact_section" className="contact">
         {/* Section Heading */}
         <div className="contact-heading">
           <p className="contact-subtitle">GET IN TOUCH</p>
@@ -336,23 +336,7 @@ const Home = () => {
           </div>
 
         </div>
-
-        {/* Map */}
-        <div className="contact-map">
-
-          <iframe
-            title="Restaurant Location"
-            src="https://www.google.com/maps?q=Mumbai,Maharashtra,India&output=embed"
-            loading="lazy"
-            allowFullScreen
-          ></iframe>
-
-        </div>
       </div>
-      <p>you are in home page</p>
-      <button onClick={() => navigate("/menu")}>
-        Go to Menu
-      </button>
     </div>
   )
 }
