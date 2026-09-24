@@ -1,4 +1,4 @@
-```gitignore
+
 # ==============================
 # Node.js / npm / Yarn
 # ==============================
@@ -92,4 +92,4 @@ test-results/
 
 # Keep package-lock.json / yarn.lock / pnpm-lock.yaml
 # These should normally be committed.
-```
+
